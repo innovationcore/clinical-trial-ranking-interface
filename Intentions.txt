@@ -1,0 +1,11 @@
+1. Create a graph db that has nodes based on common terminology in data
+2. Nodes should be connected to standard medical ontologies. I am familiar with Disease Ontology and ICD-11 APIs so lets use those.
+3. LLM Frontend should be able to reach out to the graph db and query based on keywords included. It should return some recent papers regarding terms in the query.
+4. Keywords ideally could be pulled on non-medical data too to include technologies that might be used in the field.
+
+Overview:
+Graph DB where nodes are common terms across the corpus included in my database. These nodes will be matched with condition codes in
+disease ontology and ICD-11. Additionally, a corpus of papers will be included so that additional expanding information can be included.
+
+The LLM should be able to respond with 3 papers relating to the query as they are tied to the nodes being queried. We do this via a
+similarity search.

@@ -1,0 +1,53 @@
+body, html {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#root {
+  text-align: center;
+  /*color: rgba(255, 255, 255, 0.87);*/
+  /*background-color: #242424;*/
+  color-scheme: light dark;
+}
+
+input {
+  border-radius: 20px;
+  /*background-color: #0033a0;*/
+  border-color: transparent;
+  color: white;
+  padding: 5px 30px;
+}
+
+.padding-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.site-header {
+  text-align: center;
+  font-size: 70px;
+  font-family: "Copperplate Gothic Bold", serif;
+  color: white;
+  /*background-color: #0033a0;*/
+  border-radius: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
+}
+
+.sub-headers {
+  text-align: center;
+  font-family: "Copperplate Gothic Bold", serif;
+}
+
+.logo {
+  z-index: 1;
+  width: auto;
+  height: 28vh;
+  border-radius: 50%;
+}
+
+.easter:focus {
+  outline: none;
+  box-shadow: none;
+}

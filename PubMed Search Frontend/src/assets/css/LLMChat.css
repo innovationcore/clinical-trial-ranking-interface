@@ -1,0 +1,133 @@
+.outer-container {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-container {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.chat-messages-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    /*box-sizing: border-box;*/
+    border: 0;
+    border-bottom: 1px solid black;
+    /*border-radius: 20px;*/
+    overflow: hidden;
+}
+
+.chat-messages {
+    position: relative;
+    padding: 10px;
+    /*background-color: #242424;*/
+    /*box-sizing: border-box;*/
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.user-message {
+    background-color: #f0f0f0;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #e5e5ea;
+    text-align: left;
+}
+
+.chat-input-container {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+}
+
+.chat-input::placeholder {
+    color: #999;
+}
+
+.chat-input:focus::placeholder {
+    color: transparent;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding: 10px;
+    /*box-sizing: border-box;*/
+}
+
+.chat-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}

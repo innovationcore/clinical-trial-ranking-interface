@@ -78,5 +78,11 @@ def vector_db_query_test():
     return
 
 
+def query_pubmed_eutils(query):
+    pubmed_api = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/'  # Eutils api base
+
+    return
+
+
 if __name__ == "__main__":
     vector_db_query_test()

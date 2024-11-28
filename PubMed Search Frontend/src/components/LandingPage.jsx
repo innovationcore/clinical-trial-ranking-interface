@@ -14,6 +14,9 @@ function LandingPage() {
                 I used a python package NLTK to tokenize words found in the abstracts in order to created linkages between papers focusing on similar concepts.
                 The graph connects authors to titles, titles to abstracts, citations to those papers, and then abstracts to their keywords.
             </div>
+            <div>
+                Conversations with the LLM are recorded for quality assurance and improvement.
+            </div>
         </Container>
     );
 }

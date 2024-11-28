@@ -146,10 +146,10 @@ function LLMChat() {
                                     aria-labelledby={`heading-${index}`}
                                 >
                                     <div className="panel-body">
+                                        <a href={`https://pubmed.ncbi.nlm.nih.gov/${result.pmid}/`} target={'_blank'}>View Full Paper</a>
                                         <p><strong>Authors:</strong> {result.authors}</p>
                                         <p><strong>Abstract:</strong> {result.abstract}</p>
-                                        {/*<p><strong>Citation:</strong> {result.citation}</p>*/}
-                                        {/* Add any other fields you want to display */}
+                                        {result.citation && <p><strong>Citation:</strong> {result.citation}</p>}
                                     </div>
                                 </div>
                             </div>

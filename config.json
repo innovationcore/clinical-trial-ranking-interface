@@ -1,5 +1,5 @@
 {
-  "llm_api_key": "",
+  "llm_api_key": "b4a48803-349a-4b95-b157-fd4345719e29",
   "llm_api_base": "https://data.ai.uky.edu/llm-upload/openai/v1",
   "neo4j_uri": "neo4j://localhost:7687",
   "neo4j_username": "neo4j",

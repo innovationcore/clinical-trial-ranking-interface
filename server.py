@@ -9,6 +9,12 @@ import json
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from langchain_caai.caai_emb_client import caai_emb_client
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+
+from langchain_openai import OpenAIEmbeddings
 
 app = Flask(__name__)
 CORS(app)
@@ -31,6 +37,41 @@ def get_llm(config):
         openai_api_base=config.get('llm_api_base'),
         temperature=0.2
     )
+
+
+def embedding_client(config):
+    return caai_emb_client(
+        model="",
+        api_key=llm_api_key,
+        api_url=llm_api_base,
+        max_batch_size=100,
+        num_workers=10
+    )
+
+
+def embeddings_api(config):
+    return OpenAIEmbeddings(
+        openai_api_key=llm_api_key,
+        openai_api_base=llm_api_base,
+    )
+
+
+def process_query(query):
+    data = load_json("clinical_trials_results.json")
+    text_splitter = CharacterTextSplitter(chunk_size=200, chunk_overlap=10)
+    documents = text_splitter.split_documents(data)
+    db = FAISS.from_documents(documents, embeddings)
+
+    #Similarity search
+    docs = db.similarity_search(query)
+    ss = docs[0].page_content
+
+    #Similarity search by vector
+    embedding_vector = embeddings.embed_query(query)
+    docs = db.similarity_search_by_vector(embedding_vector)
+    ssv = docs[0].page_content
+
+    return ss, ssv
 
 
 def generate_search_query(search_terms):
@@ -108,6 +149,12 @@ def generate_result_explanation(question, results, llm):
     )
 
     return explanation.content
+
+
+def load_json(file_path):
+    """Load JSON file into memory."""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 
 @app.route('/check-database', methods=['POST'])
